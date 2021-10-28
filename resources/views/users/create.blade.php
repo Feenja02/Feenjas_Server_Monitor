@@ -55,7 +55,15 @@
                         </x-button>
                     </div>
                 </form>
-                <p class="text-left pr-3 pb-3"> <a href="{{ route('users') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Back</a></p>
+                <div class="mr-4 ml-4 mt-4 mb-4" x-data="{ tooltip: false }" x-on:mouseover="tooltip = true"
+                     x-on:mouseleave="tooltip = false">
+                    <a href="{{route('users')}}">
+                        <x-icon-back/>
+                    </a>
+                    <div x-show="tooltip">
+                        <x-tooltip class="bg-gray-500 -translate-y-14">{{ __('Back') }}</x-tooltip>
+                    </div>
+                </div>
                 <br>
 
 

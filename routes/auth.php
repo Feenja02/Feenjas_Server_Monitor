@@ -25,9 +25,11 @@ Route::get('/create_user', [RegisteredUserController::class, 'create'])
 Route::post('/create_user', [RegisteredUserController::class, 'store'])
     ->middleware('auth');
 
-Route::get('/edit_user', [RegisteredUserController::class, 'edit'])
-    ->middleware('auth')
-    ->name('edit_user');
+Route::get('/users/edit/{user}', [RegisteredUserController::class, 'edit'])->name('user.edit');
+Route::post('/users/update/{user}', [RegisteredUserController::class, 'update'])->name('user.update');
+
+
+Route::get('/users/destroy/{user}', [RegisteredUserController::class, 'destroy'])->name('user.destroy');
 
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])
                 ->middleware('guest')

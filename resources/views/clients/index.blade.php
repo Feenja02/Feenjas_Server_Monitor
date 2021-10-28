@@ -66,7 +66,7 @@
                                                 </x-slot>
                                                 <x-slot name="footer">
                                                     <x-link href="{{route('client.destroy', ['client' => $client])}}"
-                                                            :layout="'danger'">{{ __('Delete') }}</x-link> {{--{{route('client.destroy', ['sample' => $sample])}}--}}
+                                                            :layout="'danger'">{{ __('Delete') }}</x-link>
                                                     <x-button @click="open = false" class="mr-3">{{ __('Cancel') }}</x-button>
                                                 </x-slot>
                                             </x-modal>
@@ -80,13 +80,13 @@
                 </div>
                 <br>
                 @if(Auth::user()->email == 'ag@lubey.ag')
-                    <p class="text-right pr-3 pb-3"><a href="#"
-                                                       class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Neuer
-                            Client</a></p>
+                    <div class="flex items-center justify-end mr-4 ml-4 mt-4 mb-4">
+                        <a href="{{route('client.create')}}">
+                            <x-button class="bg-blue-400 hover:bg-blue-700"> Neuen Client anlegen <x-icon-add/></x-button>
+                        </a>
+                    </div>
                 @endif
             </div>
-
         </div>
     </div>
-
 </x-app-layout>

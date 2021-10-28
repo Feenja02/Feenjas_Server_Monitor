@@ -12,13 +12,13 @@
                     Client bearbeiten
                 </div>
                 <br>
-                <form method="POST" action="{{ route('client.update', ['client'=>$client]) }}">
+                <form method="POST" action="{{ route('client.create')}}">
                 @csrf
                 <!-- Name -->
                     <div class="mr-4 ml-4 mt-4">
                         <x-label for="name" :value="__('Name')"/>
 
-                        <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="$client->name"
+                        <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')"
                                  required autofocus/>
                     </div>
 
@@ -27,7 +27,7 @@
                         <x-label for="location" :value="__('Location')"/>
 
                         <x-input id="location" class="block mt-1 w-full" type="text" name="location"
-                                 :value="$client->location"
+                                 :value="old('location')"
                                  required/>
                     </div>
                     <br>
@@ -39,7 +39,7 @@
                             <x-label for="street" :value="__('Street')"/>
 
                             <x-input id="street" class="block mt-1 w-full" type="text" name="street"
-                                     :value="$client->street" required/>
+                                     :value="old('street')" required/>
                         </div>
 
                         <!-- Number -->
@@ -47,7 +47,7 @@
                             <x-label for="number" :value="__('Number')"/>
 
                             <x-input id="number" class="block mt-1 w-full" type="number" name="number"
-                                     :value="$client->number" required/>
+                                     :value="old('number')" required/>
                         </div>
                     </div>
                     <!-- ZIP Code -->
@@ -55,7 +55,7 @@
                         <x-label for="zip_code" :value="__('ZIP Code')"/>
 
                         <x-input id="zip_code" class="block mt-1 " type="text" name="zip_code"
-                                 :value="$client->zip_code" required/>
+                                 :value="old('zip_code')" required/>
                     </div>
 
                     <!-- City -->
@@ -63,7 +63,7 @@
                         <x-label for="city" :value="__('City')"/>
 
                         <x-input id="city" class="block mt-1 " type="text" name="city"
-                                 :value="$client->city" required/>
+                                 :value="old('city')" required/>
                     </div>
                     <div class="flex items-center justify-end mt-4">
 
@@ -82,8 +82,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-
 </x-app-layout>

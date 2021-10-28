@@ -24,14 +24,28 @@
                         </div>
                         <div class="px-4 py-2 pb-5  -mx-3">
                             <div class="mx-3">
-                                <span class="font-semibold text-red-500 dark:text-red-400">@if($notification->type == 'App\Notifications\ClientDownNotification')
-                                        Client
-                                        Down @elseif($notification->type == 'App\Notifications\WarningNotification')
-                                        Warnung @endif</span>
-                                <p class="text-sm text-gray-600 dark:text-gray-200">@if($notification->type == 'App\Notifications\ClientDownNotification')
+                                <span class="font-semibold text-red-500 dark:text-red-400">
+                                    @if($notification->type == 'App\Notifications\ClientDownNotification')
+                                        Client Down
+                                    @elseif($notification->type == 'App\Notifications\TempWarningNotification' || $notification->type == 'App\Notifications\HumWarningNotification' || $notification->type == 'App\Notifications\WarningNotification')
+                                        Warnung
+                                    @endif</span>
+                                <p class="text-sm text-gray-600 dark:text-gray-200">
+                                    @if($notification->type == 'App\Notifications\ClientDownNotification')
                                         Der Client (Name aus data kriegen) sendet keine Werte
-                                        mehr.@elseif($notification->type == 'App\Notifications\WarningNotification')
-                                        Grenzwerte für Temperatur oder Luftfeuchtigkeit wurden überschritten @endif</p>
+                                        mehr.
+                                    @elseif($notification->type == 'App\Notifications\TempWarningNotification')
+                                        Grenzwerte für Temperatur wurden
+                                        überschritten
+                                    @elseif($notification->type == 'App\Notifications\HumWarningNotification')
+                                        Grenzwerte für Luftfeuchtigkeit wurden
+                                        überschritten
+                                    @elseif($notification->type == 'App\Notifications\WarningNotification')
+                                        Grenzwerte für Temperatur/Luftfeuchtigkeit wurden
+                                        überschritten
+                                    @else
+                                        miau
+                                    @endif</p>
                             </div>
                             <div>
                                 <p class="text-sm text-right text-gray-600 dark:text-gray-200">{{date('d.m.Y H:m', strtotime($notification->created_at))}}</p>

@@ -28,6 +28,13 @@ class RegisteredUserController extends Controller
         return view('users.edit', ['user'=>$user]);
     }
 
+    public function update(Request $request, User $user)
+    {
+        $user->fill($request->all());
+        $user->save();
+        return redirect()->route('users');
+    }
+
     /**
      * Handle an incoming registration request.
      *
@@ -57,6 +64,12 @@ class RegisteredUserController extends Controller
         /*return redirect(RouteServiceProvider::HOME);*/
 
         //old user will stay logged in and can 'administrate' further
-        return view('users.index');
+        return redirect()->route('users');
+    }
+
+    public function destroy(User $user)
+    {
+        User::destroy($user->id);
+        return redirect()->route('users');
     }
 }

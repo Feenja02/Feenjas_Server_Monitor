@@ -6,7 +6,7 @@ use App\Models\Datavalue;
 use Illuminate\Notifications\Notification;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class WarningNotification extends Notification
+class TempWarningNotification extends Notification
 {
     private $datavalue;
 
@@ -27,7 +27,6 @@ class WarningNotification extends Notification
             ->greeting('Hallo, ')
             ->line('die gemessenen Werte von ' . $this->datavalue->client->name . ' hat folgende Grenzwerte überschritten:')
             ->line('Temperatur: '.number_format($this->datavalue->temperature,2, ',' , '.').' °C')
-            ->line('Luftfeuchtigkeit: '.number_format($this->datavalue->humidity,2, ',' , '.').' %', )
             ->action('Zum Dashboard', url('/dashboard'));
     }
 

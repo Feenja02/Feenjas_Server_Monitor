@@ -36,6 +36,13 @@ Route::get('/clients', function(){
     return view('clients.index');
 })->middleware(['auth'])->name('clients');
 
+Route::get('/client.create', [\App\Http\Controllers\ClientController::class, 'create'])
+    ->middleware('auth')
+    ->name('client.create');
+
+Route::post('/client.create', [\App\Http\Controllers\ClientController::class, 'store'])
+    ->middleware('auth');
+
 Route::get('/clients/destroy/{client}', [\App\Http\Controllers\ClientController::class, 'destroy'])->name('client.destroy');
 Route::get('/clients/edit/{client}', [\App\Http\Controllers\ClientController::class, 'edit'])->name('client.edit');
 Route::post('/clients/update/{client}', [\App\Http\Controllers\ClientController::class, 'update'])->name('client.update');

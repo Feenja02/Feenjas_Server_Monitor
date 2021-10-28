@@ -5,7 +5,7 @@ namespace App\Jobs;
 use App\Models\Client;
 use App\Models\User;
 use App\Notifications\ClientDownNotification;
-use App\Notifications\WarningNotification;
+use App\Notifications\TempWarningNotification;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
