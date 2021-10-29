@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Warnungen') }}
+            {{ __('messages.warnings') }}
         </h2>
     </x-slot>
     {{--@dump(Auth::user()->notifications)--}}
@@ -9,7 +9,7 @@
         <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    Warnungen
+                    {{__('messages.warnings')}}
                 </div>
                 <br>
                 @foreach(Auth::user()->notifications as $notification)
@@ -33,16 +33,13 @@
                                 <p class="text-sm text-gray-600 dark:text-gray-200">
                                     @if($notification->type == 'App\Notifications\ClientDownNotification')
                                         Der Client @dump($notification->data['client_id']) sendet keine Werte
-                                        mehr.
+                                        mehr. {{--TODO Name Client--}}
                                     @elseif($notification->type == 'App\Notifications\TempWarningNotification')
-                                        Grenzwerte für <b>Temperatur</b> wurden
-                                        über- oder unterschritten
+                                        {{ __('messages.limit_values_temp') }}
                                     @elseif($notification->type == 'App\Notifications\HumWarningNotification')
-                                        Grenzwerte für <b>Luftfeuchtigkeit</b> wurden
-                                        über- oder unterschritten
+                                        {{ __('messages.limit_values_hum') }}
                                     @elseif($notification->type == 'App\Notifications\WarningNotification')
-                                        Grenzwerte für <b>Temperatur/Luftfeuchtigkeit</b> wurden
-                                        über- oder unterschritten
+                                        {{ __('messages.limit_values_temp_hum') }}
                                     @endif</p>
                             </div>
                         </div>

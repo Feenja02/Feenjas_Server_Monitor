@@ -26,7 +26,7 @@ class WatchdogJob implements ShouldQueue
             $last = $client->datavalues->last();
             if ($last) {
                 if ($last->created_at->addMinutes(5) < Carbon::now() && $client->is_activated == 1) {
-                    Log::warning('oh oh');
+                    /*Log::warning('oh oh');*/
                     if ($client->last_warning_sent_at==null || $client->last_warning_sent_at->addHours(2) < Carbon::now()){
                         Notification::send(User::query()->get(), new ClientDownNotification($client));
                         $client->last_warning_sent_at = Carbon::now();

@@ -1,14 +1,65 @@
 <?php
 
 return [
+    /** general translation stuff */
+    'dashboard' => 'Dashboard',
     'Temp' => 'Temperature',
     'Hum' => 'Humidity',
+    'name' => 'Name',
+    'location' => 'Location',
+    'street_number' => 'Street, Number',
+    'zip_code' => 'ZIP Code',
+    'city' => 'City',
+    'warning' => 'Warning',
+    'warnings' => 'Warnings',
+    'address' => 'Address',
+    'street' => 'Street',
+    'number' => 'Number',
+
+    /** Warnings */
+    'limit_values_temp' => 'Limit values for Temperature were exceeded or not reached',
+    'limit_values_hum' => 'Limit values for Humidity were exceeded or not reached',
+    'limit_values_temp_hum' => 'Limit values for Temperature/Humidity were exceeded or not reached',
+
+    /** User/s */
+    'role' => 'Role',
+    'admin' => 'Admin',
+    'users' => 'Users',
+    'user' => 'User',
+    'user_list' => 'List of Users',
+    'create_user' => 'Create User',
+    'email' => 'E-Mail',
+    'password' => 'Password',
+    'confirm_password' => 'Confirm Password',
+    'edit_user' => 'Edit User',
+    'pw_reset_info' => 'Click on button sends mail to user to reset PW',
+    'reset_pw' => 'Reset Password',
+
+    /** Client/s */
+    'clients' => 'Clients',
+    'client_id' => 'Client-ID',
+    'clients_list' => 'List of Clients',
     'client_not_activated' => 'This clients is not activated.',
-    'delete_client' => 'Delete Client',
-    'delete_client_message' => 'Do you really want to delete this Client?',
     'click_to_deactivate' => 'Click to DEACTIVATE',
     'click_to_activate' => 'Click to ACTIVATE',
-    'client_down_icon' => 'Have not sent data in a while',
+    'delete_client' => 'Delete Client',
+    'delete_client_message' => 'Do you really want to delete this Client?',
     'client_down' => 'Client Down',
-    'warning' => 'Warnung',
+    'client_down_icon' => 'Have not sent data in a while',
+    'create_client' => 'Create Client',
+    'edit_client' => 'Edit Client',
+
+    /** Timeline */
+    'timeline' => 'Timeline',
+    'timeline_info' => 'Timeline of the values in the last 24 hours',
+    'chart_y_axis' => 'Temp in °C + Hum in %',
+
+    /** Action - Buttons */
+    'create' => 'Create',
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'cancel' => 'Cancel',
+    'save' => 'Save',
+    'back' => 'Back',
+    'log_out' => 'Log Out',
 ];

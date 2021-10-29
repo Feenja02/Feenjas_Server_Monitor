@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('messages.dashboard') }}
         </h2>
     </x-slot>
     @foreach(\App\Models\Client::query()->get() as $client)
@@ -58,7 +58,6 @@
                         {{--@dump($values)--}}
                         <x-val-display-block :value_temp1="number_format($values->temperature,2,',','.')"
                                              :value_hum1="number_format($values->humidity,2, ',' , '.')">
-
                         </x-val-display-block>
                     </div>
                 @else

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Nutzer bearbeiten') }}
+            {{ __('messages.edit_user') }}
         </h2>
     </x-slot>
 
@@ -9,41 +9,41 @@
         <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    Nutzer bearbeiten
+                    {{ __('messages.edit_user') }}
                 </div>
                 <br>
                 <form method="POST" action="{{ route('user.update', ['user'=>$user]) }}">
                 @csrf
                 <!-- Name -->
                     <div class="mr-4 ml-4 mt-4">
-                        <x-label for="name" :value="__('Name')"/>
+                        <x-label for="name" :value="__('messages.name')"/>
 
                         <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="$user->name"
                                  required autofocus/>
                     </div>
                     <!-- Email Address -->
                     <div class="mr-4 ml-4 mt-4">
-                        <x-label for="email" :value="__('Email')"/>
+                        <x-label for="email" :value="__('messages.email')"/>
                         <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="$user->email"
                                  required/>
                     </div>
                     <div class="flex items-center justify-end mt-4">
                         <x-button class="mr-4 bg-green-400">
-                            {{ __('Save') }}
+                            {{ __('messages.save') }}
                         </x-button>
                     </div>
                 </form>
                 <br>
-                <div class="mr-4 ml-4 mt-4"> Passwort</div>
+                <div class="mr-4 ml-4 mt-4"> {{__('messages.password')}}</div>
                 <hr>
-                <div class="mr-4 ml-4 mt-4"> Klick auf Button versendet Mail an User zum Zurücksetzen des PW</div>
+                <div class="mr-4 ml-4 mt-4"> {{ __('messages.pw_reset_info') }}</div>
                 <!-- Password -->
                 <div class="mr-4 ml-4 mt-4 mb-4">
                     <form method="POST" action="#">{{--{{ route('password.email') }}--}}
                         @csrf
                         <div class="flex items-center justify-center mt-4 w-full">
                             <x-button>
-                                Passwort zurücksetzen
+                                {{ __('messages.reset_pw') }}
                                 <x-icon-mail/>
                                 <x-icon-chevron-double-right/>
                             </x-button>
@@ -57,7 +57,7 @@
                         <x-icon-back/>
                     </a>
                     <div x-show="tooltip">
-                        <x-tooltip class="bg-gray-500 -translate-y-14">{{ __('Back') }}</x-tooltip>
+                        <x-tooltip class="bg-gray-500 -translate-y-14">{{ __('messages.back') }}</x-tooltip>
                     </div>
                 </div>
             </div>

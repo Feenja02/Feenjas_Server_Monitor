@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Clients') }}
+            {{ __('messages.clients') }}
         </h2>
     </x-slot>
 
@@ -9,7 +9,7 @@
         <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    Liste der Clients
+                    {{ __('messages.clients_list') }}
                 </div>
                 <br>
                 @php
@@ -19,12 +19,12 @@
                     <table class="table-fixed">
                         <thead>
                         <tr>
-                            <th class="w-1/4">Name</th>
-                            <th class="w-1/8">Client-ID</th>
-                            <th class="w-1/6">Standort</th>
-                            <th class="w-1/6">Straße, Nummer</th>
-                            <th class="w-1/6">PLZ</th>
-                            <th class="w-1/6">Ort</th>
+                            <th class="w-1/4">{{ __('messages.name') }}</th>
+                            <th class="w-1/8">{{ __('messages.client_id') }}</th>
+                            <th class="w-1/6">{{ __('messages.location') }}</th>
+                            <th class="w-1/6">{{ __('messages.street_number') }}</th>
+                            <th class="w-1/6">{{ __('messages.zip_code') }}</th>
+                            <th class="w-1/6">{{ __('messages.city') }}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -55,7 +55,7 @@
                                                 <x-icon-del/>
                                             </a>
                                             <div x-show="tooltip">
-                                                <x-tooltip class="bg-red-500 -translate-y-14">{{ __('Delete') }}</x-tooltip>
+                                                <x-tooltip class="bg-red-500 -translate-y-14">{{ __('messages.delete') }}</x-tooltip>
                                             </div>
                                             <x-modal x-show="open" :danger="true">
                                                 <x-slot name="header">
@@ -66,8 +66,8 @@
                                                 </x-slot>
                                                 <x-slot name="footer">
                                                     <x-link href="{{route('client.destroy', ['client' => $client])}}"
-                                                            :layout="'danger'">{{ __('Delete') }}</x-link>
-                                                    <x-button @click="open = false" class="mr-3">{{ __('Cancel') }}</x-button>
+                                                            :layout="'danger'">{{ __('messages.delete') }}</x-link>
+                                                    <x-button @click="open = false" class="mr-3">{{ __('messages.cancel') }}</x-button>
                                                 </x-slot>
                                             </x-modal>
                                         </div>
@@ -82,7 +82,7 @@
                 @if(Auth::user()->email == 'ag@lubey.ag')
                     <div class="flex items-center justify-end mr-4 ml-4 mt-4 mb-4">
                         <a href="{{route('client.create')}}">
-                            <x-button class="bg-blue-400 hover:bg-blue-700"> Neuen Client anlegen <x-icon-add/></x-button>
+                            <x-button class="bg-blue-400 hover:bg-blue-700"> {{ __('messages.create_client') }} <x-icon-add/></x-button>
                         </a>
                     </div>
                 @endif

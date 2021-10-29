@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Nutzer') }}
+            {{ __('messages.users') }}
         </h2>
     </x-slot>
 
@@ -9,7 +9,7 @@
         <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    Liste der Nutzer
+                    {{ __('messages.user_list') }}
                 </div>
 
                 <br>
@@ -20,9 +20,9 @@
                     <table class="table-fixed">
                         <thead>
                         <tr>
-                            <th class="w-1/2">Name</th>
-                            <th class="w-1/2">E-Mail</th>
-                            <th class="w-1/5">Rolle</th>
+                            <th class="w-1/2">{{__('messages.name')}}</th>
+                            <th class="w-1/2">{{__('messages.email')}}</th>
+                            <th class="w-1/5">{{ __('messages.role') }}</th>
                             @if(Auth::user()->email == 'ag@lubey.ag')
                                 <th class="w-1/5"></th>
                             @endif
@@ -33,12 +33,11 @@
                             @if($user->name == Auth::user()->name)
                                 @continue
                             @endif
-                            {{--@dump($user)--}}
                             <tr>
                                 <td class="px-4 py-2 border">{{$user->name}}</td>
                                 <td class="px-4 py-2 border">{{$user->email}}</td>
-                                <td class="px-4 py-2 border">@if($user->email == 'ag@lubey.ag')Admin @else
-                                        Nutzer @endif</td>
+                                <td class="px-4 py-2 border">@if($user->email == 'ag@lubey.ag'){{ __('messages.admin') }} @else
+                                        {{__('messages.user')}} @endif</td>
                                 @if(Auth::user()->email == 'ag@lubey.ag')
                                     <td class="px-2 py-2">
                                         <div class="mt-0" x-data="{ tooltip: false }" x-on:mouseover="tooltip = true"
@@ -48,7 +47,7 @@
                                             </a>
                                             <div x-show="tooltip">
                                                 <x-tooltip
-                                                    class="bg-green-500 -translate-y-14">{{ __('Edit') }}</x-tooltip>
+                                                    class="bg-green-500 -translate-y-14">{{ __('messages.edit') }}</x-tooltip>
                                             </div>
                                         </div>
                                     </td>
@@ -61,7 +60,7 @@
                                             </a>
                                             <div x-show="tooltip">
                                                 <x-tooltip
-                                                    class="bg-red-500 -translate-y-14">{{ __('Delete') }}</x-tooltip>
+                                                    class="bg-red-500 -translate-y-14">{{ __('messages.delete') }}</x-tooltip>
                                             </div>
                                             <x-modal x-show="open" :danger="true">
                                                 <x-slot name="header">
@@ -72,9 +71,9 @@
                                                 </x-slot>
                                                 <x-slot name="footer">
                                                     <x-link href="{{route('user.destroy', ['user' => $user])}}"
-                                                            :layout="'danger'">{{ __('Delete') }}</x-link>
+                                                            :layout="'danger'">{{ __('messages.delete') }}</x-link>
                                                     <x-button @click="open = false"
-                                                              class="mr-3">{{ __('Cancel') }}</x-button>
+                                                              class="mr-3">{{ __('messages.cancel') }}</x-button>
                                                 </x-slot>
                                             </x-modal>
                                         </div>
@@ -89,13 +88,11 @@
                 @if(Auth::user()->email == 'ag@lubey.ag')
                     <div class="flex items-center justify-end mr-4 ml-4 mt-4 mb-4">
                         <a href="{{route('create_user')}}">
-                           <x-button class="bg-blue-400 hover:bg-blue-700"> Neuen Nutzer anlegen <x-icon-add-user/></x-button>
+                           <x-button class="bg-blue-400 hover:bg-blue-700"> {{__('messages.create_user')}} <x-icon-add-user/></x-button>
                         </a>
                     </div>
                 @endif
             </div>
-
         </div>
     </div>
-
 </x-app-layout>

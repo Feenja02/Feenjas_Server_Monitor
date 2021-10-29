@@ -1,14 +1,14 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Verlauf') }}
+            {{ __('messages.timeline') }}
         </h2>
     </x-slot>
     <div class="py-12">
         <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    Verlauf der Werte in den letzten 24 Stunden
+                    {{ __('messages.timeline_info') }}
                 </div>
                 <div id="chartdiv" style="width: 700px; height: 400px"></div>
                 <br>
@@ -45,7 +45,7 @@
             chart.dateFormatter.inputDateFormat = "yyyy-MM-dd HH:mm:ss";
             dateAxis.dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss";
             valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-            valueAxis.title.text = "Temp in °C + Hum in %";
+            valueAxis.title.text = "{{ __('messages.chart_y_axis') }}";
 
             dateAxis.baseInterval = {
                 timeUnit: "hour",
@@ -62,7 +62,7 @@
             series1.dataFields.valueY = "ax";
             series1.strokeWidth = 3;
             series1.fillOpacity = 0.2;
-            series1.tooltipText = "Temperatur: {valueY}°C"
+            series1.tooltipText = "{{__('messages.Temp')}}: {valueY}°C"
 
 
             var series2 = chart.series.push(new am4charts.LineSeries());
@@ -71,7 +71,7 @@
             series2.strokeWidth = 3;
             series2.fillOpacity = 0.2;
             series2.baseAxis = valueAxis;
-            series2.tooltipText = "Luftfeuchtigkeit: {valueY}%"
+            series2.tooltipText = "{{__('messages.Hum')}}: {valueY}%"
 
 // Chart Cursor
             chart.cursor= new am4charts.XYCursor();
