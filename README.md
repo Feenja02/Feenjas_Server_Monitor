@@ -1,2 +1,2 @@
 
-<p>Feenjas Server Monitor</p>
+<h3>Feenjas Server Monitor</h3>
