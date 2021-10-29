@@ -33,7 +33,7 @@ class HumWarningNotification extends Notification
     public function toArray($notifiable): array
     {
         return [
-            //
+            'client_id'=>$this->datavalue->client->id,
         ];
     }
 }

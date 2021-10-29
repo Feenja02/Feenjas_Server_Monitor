@@ -22,34 +22,32 @@
                                     d="M20 3.36667C10.8167 3.36667 3.3667 10.8167 3.3667 20C3.3667 29.1833 10.8167 36.6333 20 36.6333C29.1834 36.6333 36.6334 29.1833 36.6334 20C36.6334 10.8167 29.1834 3.36667 20 3.36667ZM19.1334 33.3333V22.9H13.3334L21.6667 6.66667V17.1H27.25L19.1334 33.3333Z"/>
                             </svg>
                         </div>
-                        <div class="px-4 py-2 pb-5  -mx-3">
+                        <div class="px-4 py-2 pb-5">
                             <div class="mx-3">
                                 <span class="font-semibold text-red-500 dark:text-red-400">
                                     @if($notification->type == 'App\Notifications\ClientDownNotification')
-                                        Client Down
+                                        {{ __('messages.client_down') }}
                                     @elseif($notification->type == 'App\Notifications\TempWarningNotification' || $notification->type == 'App\Notifications\HumWarningNotification' || $notification->type == 'App\Notifications\WarningNotification')
-                                        Warnung
+                                        {{ __('messages.warning') }}
                                     @endif</span>
                                 <p class="text-sm text-gray-600 dark:text-gray-200">
                                     @if($notification->type == 'App\Notifications\ClientDownNotification')
-                                        Der Client (Name aus data kriegen) sendet keine Werte
+                                        Der Client @dump($notification->data['client_id']) sendet keine Werte
                                         mehr.
                                     @elseif($notification->type == 'App\Notifications\TempWarningNotification')
-                                        Grenzwerte für Temperatur wurden
-                                        überschritten
+                                        Grenzwerte für <b>Temperatur</b> wurden
+                                        über- oder unterschritten
                                     @elseif($notification->type == 'App\Notifications\HumWarningNotification')
-                                        Grenzwerte für Luftfeuchtigkeit wurden
-                                        überschritten
+                                        Grenzwerte für <b>Luftfeuchtigkeit</b> wurden
+                                        über- oder unterschritten
                                     @elseif($notification->type == 'App\Notifications\WarningNotification')
-                                        Grenzwerte für Temperatur/Luftfeuchtigkeit wurden
-                                        überschritten
-                                    @else
-                                        miau
+                                        Grenzwerte für <b>Temperatur/Luftfeuchtigkeit</b> wurden
+                                        über- oder unterschritten
                                     @endif</p>
                             </div>
-                            <div>
-                                <p class="text-sm text-right text-gray-600 dark:text-gray-200">{{date('d.m.Y H:m', strtotime($notification->created_at))}}</p>
-                            </div>
+                        </div>
+                        <div class="flex items-center justify-end px-4 py-2 pb-5">
+                            <p class="text-sm text-right text-gray-600 dark:text-gray-200">{{date('d.m.Y H:i', strtotime($notification->created_at))}}</p>
                         </div>
                     </div>
                     <br>

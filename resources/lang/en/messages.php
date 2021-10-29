@@ -9,4 +9,6 @@ return [
     'click_to_deactivate' => 'Click to DEACTIVATE',
     'click_to_activate' => 'Click to ACTIVATE',
     'client_down_icon' => 'Have not sent data in a while',
+    'client_down' => 'Client Down',
+    'warning' => 'Warnung',
 ];

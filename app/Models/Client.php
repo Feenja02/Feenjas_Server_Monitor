@@ -11,6 +11,8 @@ class Client extends Model
 
     protected $casts = [
         'last_warning_sent_at' => 'datetime',
+        'last_temp_warning_sent_at' => 'datetime',
+        'last_hum_warning_sent_at' => 'datetime',
     ];
 
     protected $fillable = [
