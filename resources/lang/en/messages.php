@@ -46,6 +46,7 @@ return [
     'delete_client_message' => 'Do you really want to delete this Client?',
     'client_down' => 'Client Down',
     'client_down_icon' => 'Have not sent data in a while',
+    'client_down_info' => 'The client ":CLIENT" no longer sends values.',
     'create_client' => 'Create Client',
     'edit_client' => 'Edit Client',
 
@@ -62,4 +63,10 @@ return [
     'save' => 'Save',
     'back' => 'Back',
     'log_out' => 'Log Out',
+
+    /** Mail-Notifications */
+    'greeting' => 'Hello, ',
+    'val_limit_reached_mail' => 'the measured values of :CLIENT has exceeded the following limits:',
+    'to_dashboard' => 'Go to the dashboard',
+    'client_down_mail' => 'the client :CLIENT has failed. Please check urgently!',
 ];

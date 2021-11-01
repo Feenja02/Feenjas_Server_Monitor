@@ -32,8 +32,7 @@
                                     @endif</span>
                                 <p class="text-sm text-gray-600 dark:text-gray-200">
                                     @if($notification->type == 'App\Notifications\ClientDownNotification')
-                                        Der Client @dump($notification->data['client_id']) sendet keine Werte
-                                        mehr. {{--TODO Name Client--}}
+                                        {{ __('messages.client_down_info', ['CLIENT' => \App\Models\Client::find($notification->data['client_id'])->name]) }}
                                     @elseif($notification->type == 'App\Notifications\TempWarningNotification')
                                         {{ __('messages.limit_values_temp') }}
                                     @elseif($notification->type == 'App\Notifications\HumWarningNotification')

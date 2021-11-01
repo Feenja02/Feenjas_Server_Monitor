@@ -24,10 +24,10 @@ class HumWarningNotification extends Notification
     {
         return (new MailMessage)
             ->error()
-            ->greeting('Hallo, ')
-            ->line('die gemessenen Werte von ' . $this->datavalue->client->name . ' hat folgende Grenzwerte überschritten:')
-            ->line('Luftfeuchtigkeit: '.number_format($this->datavalue->humidity,2, ',' , '.').' %', )
-            ->action('Zum Dashboard', url('/dashboard'));
+            ->greeting(__('messages.greeting'))
+            ->line(__('messages.val_limit_reached', ['CLIENT' => $this->datavalue->client->name]))
+            ->line(__('messages.Hum').': '.number_format($this->datavalue->humidity,2, ',' , '.').' %', )
+            ->action(__('messages.to_dashboard'), url('/dashboard'));
     }
 
     public function toArray($notifiable): array

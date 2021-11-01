@@ -23,8 +23,8 @@ class ClientDownNotification extends Notification
     {
         return (new MailMessage)
             ->error()
-            ->greeting('Hallo,')
-            ->line('der Client '.$this->client->name.' ist ausgefallen. Bitte dringend überprüfen!');
+            ->greeting(__('messages.greeting'))
+            ->line(__('messages.client_down_mail', ['CLIENT' => $this->client->name]));
     }
 
     public function toArray($notifiable): array

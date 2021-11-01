@@ -45,6 +45,7 @@ return [
     'delete_client' => 'Client Löschen',
     'delete_client_message' => 'Wirklich Löschen?',
     'client_down' => 'Client Down',
+    'client_down_info' => 'Der Client ":CLIENT" sendet keine Werte mehr.',
     'client_down_icon' => 'Hat in der letzten Zeit keine Werte gesendet',
     'create_client' => 'Client anlegen',
     'edit_client' => 'Client bearbeiten',
@@ -62,4 +63,10 @@ return [
     'save' => 'Speichern',
     'back' => 'Zurück',
     'log_out' => 'Ausloggen',
+
+    /** Mail-Notifications */
+    'greeting' => 'Hallo, ',
+    'val_limit_reached_mail' => 'die gemessenen Werte von :CLIENT hat folgende Grenzwerte überschritten:',
+    'to_dashboard' => 'Zum Dashboard',
+    'client_down_mail' => 'der Client :CLIENT ist ausgefallen. Bitte dringend überprüfen!',
 ];

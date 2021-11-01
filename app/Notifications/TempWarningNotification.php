@@ -24,10 +24,10 @@ class TempWarningNotification extends Notification
     {
         return (new MailMessage)
             ->error()
-            ->greeting('Hallo, ')
-            ->line('die gemessenen Werte von ' . $this->datavalue->client->name . ' hat folgende Grenzwerte überschritten:')
-            ->line('Temperatur: '.number_format($this->datavalue->temperature,2, ',' , '.').' °C')
-            ->action('Zum Dashboard', url('/dashboard'));
+            ->greeting(__('messages.greeting'))
+            ->line(__('messages.val_limit_reached_mail', ['CLIENT' => $this->datavalue->client->name]))
+            ->line(__('messages.Temp').': '.number_format($this->datavalue->temperature,2, ',' , '.').' °C')
+            ->action(__('messages.to_dashboard'), url('/dashboard'));
     }
 
     public function toArray($notifiable): array
