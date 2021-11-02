@@ -39,10 +39,22 @@
                 <div class="mr-4 ml-4 mt-4"> {{ __('messages.pw_reset_info') }}</div>
                 <!-- Password -->
                 <div class="mr-4 ml-4 mt-4 mb-4">
-                    <form method="POST" action="#">{{--{{ route('password.email') }}--}}
+                    @if(session('status'))
+                        <div class="py-3 px-5 mb-4 bg-green-100 text-green-900 text-sm rounded-md border border-green-200" role="alert">{{session('status')}}</div>
+                    @else
+                        <div>
+                            <ul class="p-0 m-0" style="list-style: none;">
+                                @foreach($errors->all() as $error)
+                                    <li class="py-3 px-5 mb-4 bg-red-100 text-red-900 text-sm rounded-md border border-red-200" role="alert">{{$error}}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <form method="POST" action="{{ route('password.email') }}">
+                        <input type="hidden" name="email" id="email" value="{{$user->email}}"/>
                         @csrf
                         <div class="flex items-center justify-center mt-4 w-full">
-                            <x-button>
+                            <x-button id="resetPasswortButton">
                                 {{ __('messages.reset_pw') }}
                                 <x-icon-mail/>
                                 <x-icon-chevron-double-right/>
@@ -63,4 +75,24 @@
             </div>
         </div>
     </div>
+
+    @push('scripts')
+        <script type="text/javascript">
+            $(document).ready(function(){
+                {{--$('#resetPasswortButton').on('click',function(){--}}
+                {{--    let data = {'email':$('#email').val()};--}}
+                {{--    let url = '{{route('password.email')}}';--}}
+                {{--    $.ajax({--}}
+                {{--        method:'post',--}}
+                {{--        url:url,--}}
+                {{--        data: data,--}}
+                {{--        headers: {'X-CSRF-TOKEN':'{{csrf_token()}}'},--}}
+                {{--        success: function(resp){--}}
+                {{--            console.log(resp);--}}
+                {{--        }--}}
+                {{--    })--}}
+                {{--});--}}
+            });
+        </script>
+    @endpush
 </x-app-layout>

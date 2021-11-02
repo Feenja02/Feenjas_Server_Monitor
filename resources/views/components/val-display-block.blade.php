@@ -4,7 +4,7 @@
             <div
                 class="border-b @if($attributes['value_temp1'] < 18 || $attributes['value_temp1'] > 27) border-white @else border-green-400 @endif">
                 <p class="font-bold text-center @if($attributes['value_temp1'] < 18 || $attributes['value_temp1'] > 27) text-white @endif">
-                    Temperatur
+                    {{__('messages.Temp')}}
                 </p>
             </div>
             <br><br>
@@ -19,7 +19,7 @@
             <div
                 class="border-b @if($attributes['value_hum1'] < 30 || $attributes['value_hum1'] > 60) border-white @else border-green-400 @endif">
                 <p class="font-bold text-center @if($attributes['value_hum1'] < 30 || $attributes['value_hum1'] > 60) text-white @endif">
-                   Luftfeuchtigkeit
+                    {{__('messages.Hum')}}
                 </p>
             </div>
             <br><br>

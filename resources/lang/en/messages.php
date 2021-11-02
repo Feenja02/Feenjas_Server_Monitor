@@ -31,6 +31,8 @@ return [
     'email' => 'E-Mail',
     'password' => 'Password',
     'confirm_password' => 'Confirm Password',
+    'forgot_pw' => 'Forgot your password?',
+    'remember_me' => 'Remember me',
     'edit_user' => 'Edit User',
     'pw_reset_info' => 'Click on button sends mail to user to reset PW',
     'reset_pw' => 'Reset Password',
@@ -62,11 +64,17 @@ return [
     'cancel' => 'Cancel',
     'save' => 'Save',
     'back' => 'Back',
-    'log_out' => 'Log Out',
+    'log_out' => 'Log out',
+    'log_in' => 'Log in',
+    'close' => 'Close',
 
     /** Mail-Notifications */
     'greeting' => 'Hello, ',
     'val_limit_reached_mail' => 'the measured values of :CLIENT has exceeded the following limits:',
     'to_dashboard' => 'Go to the dashboard',
     'client_down_mail' => 'the client :CLIENT has failed. Please check urgently!',
+    'reset_pw_mail_info' => 'Your administrator has sent you this mail because of your request to reset your password for your account.',
+    'reset_pw_link_expire_info' => 'This password reset link will expire in :count minutes.',
+    'reset_pw_no_action' => 'If you did not request a password reset, no further action is required.',
+    'regards_mail' => 'Regards, Your Admin',
 ];

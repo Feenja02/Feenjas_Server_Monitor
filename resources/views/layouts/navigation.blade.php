@@ -57,6 +57,15 @@
                     </x-slot>
                     <x-slot name="content">
                         <!-- Authentication -->
+                        @if (Auth::user()->email = 'ag@lubey.ag')
+                            <x-dropdown-link :href="route('password.email')">
+                                <form method="POST" action="{{ route('password.email') }}">
+                                    <input type="hidden" name="email" id="email" value="{{Auth::user()->email}}"/> {{--TODO make it work!--}}
+                                    @csrf
+                                    {{__('messages.reset_pw')}}
+                                </form>
+                            </x-dropdown-link>
+                        @endif
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 

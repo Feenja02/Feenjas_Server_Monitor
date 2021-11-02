@@ -31,9 +31,12 @@ return [
     'email' => 'E-Mail',
     'password' => 'Passwort',
     'confirm_password' => 'Passwort bestätigen',
+    'forgot_pw' => 'Passwort vergessen?',
+    'remember_me' => 'Angemeldet bleiben',
     'edit_user' => 'Nutzer bearbeiten',
     'pw_reset_info' => 'Klick auf Button versendet Mail an User zum Zurücksetzen des PW',
     'reset_pw' => 'Passwort zurücksetzen',
+    'forgot_pw_message' => 'Wenn Sie Ihr Passwort vergessen haben sollten, wenden Sie sich hierzu bitte an Ihren Adminsitrator: :ADMIN - :EMAIL',
 
     /** Client/s */
     'clients' => 'Clients',
@@ -62,11 +65,17 @@ return [
     'cancel' => 'Abbrechen',
     'save' => 'Speichern',
     'back' => 'Zurück',
-    'log_out' => 'Ausloggen',
+    'log_out' => 'Abmelden',
+    'log_in' => 'Anmelden',
+    'close' => 'Schließen',
 
     /** Mail-Notifications */
     'greeting' => 'Hallo, ',
     'val_limit_reached_mail' => 'die gemessenen Werte von :CLIENT hat folgende Grenzwerte überschritten:',
     'to_dashboard' => 'Zum Dashboard',
     'client_down_mail' => 'der Client :CLIENT ist ausgefallen. Bitte dringend überprüfen!',
+    'reset_pw_mail_info' => 'Ihr Administrator hat Ihnen diese Mail zukommen lassen aufgrund Ihrer Anfrage zum Zurücksetzen Ihres Passwortes für Ihren Account.',
+    'reset_pw_link_expire_info' => 'Der Link zum Zurücksetzen des Passworts läuft in :count Minuten ab.',
+    'reset_pw_no_action' => 'Wenn Sie keine Rücksetzung des Kennworts beantragt haben, sind keine weiteren Schritte erforderlich.',
+    'regards_mail' => 'Mit freundlichen Grüßen, Ihr Admin',
 ];
