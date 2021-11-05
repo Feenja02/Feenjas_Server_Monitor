@@ -36,7 +36,7 @@ return [
     'edit_user' => 'Nutzer bearbeiten',
     'pw_reset_info' => 'Klick auf Button versendet Mail an User zum Zurücksetzen des PW',
     'reset_pw' => 'Passwort zurücksetzen',
-    'forgot_pw_message' => 'Wenn Sie Ihr Passwort vergessen haben sollten, wenden Sie sich hierzu bitte an Ihren Adminsitrator: :ADMIN - :EMAIL',
+    'forgot_pw_message' => 'Wenn Sie Ihr Passwort vergessen haben sollten, wenden Sie sich hierzu bitte an Ihren Administrator: :ADMIN - :EMAIL',
 
     /** Client/s */
     'clients' => 'Clients',
@@ -48,6 +48,7 @@ return [
     'delete_client' => 'Client Löschen',
     'delete_client_message' => 'Wirklich Löschen?',
     'client_down' => 'Client Down',
+    'no_data_sent_yet' => 'Dieser Client hat noch keine Daten gesendet.',
     'client_down_info' => 'Der Client ":CLIENT" sendet keine Werte mehr.',
     'client_down_icon' => 'Hat in der letzten Zeit keine Werte gesendet',
     'create_client' => 'Client anlegen',

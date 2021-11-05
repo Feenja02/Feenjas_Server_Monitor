@@ -62,7 +62,7 @@
                                 <form method="POST" action="{{ route('password.email') }}">
                                     <input type="hidden" name="email" id="email" value="{{Auth::user()->email}}"/> {{--TODO make it work!--}}
                                     @csrf
-                                    {{__('messages.reset_pw')}}
+                                    {{__('messages.reset_pw')}} (funktioniert noch nicht)
                                 </form>
                             </x-dropdown-link>
                         @endif

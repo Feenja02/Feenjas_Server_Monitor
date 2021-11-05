@@ -47,6 +47,7 @@ return [
     'delete_client' => 'Delete Client',
     'delete_client_message' => 'Do you really want to delete this Client?',
     'client_down' => 'Client Down',
+    'no_data_sent_yet' => 'This Client have not sent data yet.',
     'client_down_icon' => 'Have not sent data in a while',
     'client_down_info' => 'The client ":CLIENT" no longer sends values.',
     'create_client' => 'Create Client',

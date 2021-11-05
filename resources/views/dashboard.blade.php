@@ -11,7 +11,7 @@
         <x-content-card>
             <x-slot name="header">
                 <div class="flex flex-row">
-                    @if($values->created_at->addMinutes(5) < \Illuminate\Support\Carbon::now() && $client->is_activated == 1)
+                    @if($client->is_activated === 1 && $values && $values->created_at->addMinutes(5) < \Illuminate\Support\Carbon::now())
                         <div class="mt-0" x-data="{ tooltip: false }" x-on:mouseover="tooltip = true"
                              x-on:mouseleave="tooltip = false">
                             <x-icon-client-down/>
@@ -53,13 +53,15 @@
             </x-slot>
 
             <x-slot name="body">
-                @if($client->is_activated === 1)
+                @if($client->is_activated === 1 && $values)
                     <div class="space-x-4">
                         {{--@dump($values)--}}
                         <x-val-display-block :value_temp1="number_format($values->temperature,2,',','.')"
                                              :value_hum1="number_format($values->humidity,2, ',' , '.')">
                         </x-val-display-block>
                     </div>
+                @elseif($client->is_activated === 1 && !$values)
+                    {{ __('messages.no_data_sent_yet') }}
                 @else
                     {{ __('messages.client_not_activated') }}
                 @endif
