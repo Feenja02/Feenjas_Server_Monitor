@@ -36,7 +36,7 @@
                                 <td class="px-4 py-2 border">{{$client->street}} {{$client->number}}</td>
                                 <td class="px-4 py-2 border">{{$client->zip_code}}</td>
                                 <td class="px-4 py-2 border">{{$client->city}}</td>
-                                @if(Auth::user()->email == 'ag@lubey.ag')
+                                @if(Auth::user()->email == 'ag@lubey.ag') {{--TODO hardcoded admin isnt good!--}}
                                     <td class="px-2 py-2">
                                         <div class="mt-0" x-data="{ tooltip: false }" x-on:mouseover="tooltip = true"
                                              x-on:mouseleave="tooltip = false">
