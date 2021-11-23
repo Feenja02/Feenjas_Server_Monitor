@@ -14,7 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    if (\App\Models\User::query()->get()->count() == 0) {
+        return view('auth.login');
+    }else{
+        return view('auth.register');
+    }
 });
 
 Route::get('/dashboard', function () {
