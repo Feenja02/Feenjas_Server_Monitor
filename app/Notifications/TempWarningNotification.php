@@ -24,6 +24,7 @@ class TempWarningNotification extends Notification
     {
         return (new MailMessage)
             ->error()
+            ->subject(__('messages.temp_warning_notification'))
             ->greeting(__('messages.greeting'))
             ->line(__('messages.val_limit_reached_mail', ['CLIENT' => $this->datavalue->client->name]))
             ->line(__('messages.Temp').': '.number_format($this->datavalue->temperature,2, ',' , '.').' °C')

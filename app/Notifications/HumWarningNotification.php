@@ -24,8 +24,9 @@ class HumWarningNotification extends Notification
     {
         return (new MailMessage)
             ->error()
+            ->subject(__('messages.hum_warning_notification'))
             ->greeting(__('messages.greeting'))
-            ->line(__('messages.val_limit_reached', ['CLIENT' => $this->datavalue->client->name]))
+            ->line(__('messages.val_limit_reached_mail', ['CLIENT' => $this->datavalue->client->name]))
             ->line(__('messages.Hum').': '.number_format($this->datavalue->humidity,2, ',' , '.').' %', )
             ->action(__('messages.to_dashboard'), url('/dashboard'));
     }

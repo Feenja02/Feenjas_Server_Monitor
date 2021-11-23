@@ -23,6 +23,7 @@ class ClientDownNotification extends Notification
     {
         return (new MailMessage)
             ->error()
+            ->subject(__('messages.client_down_notification'))
             ->greeting(__('messages.greeting'))
             ->line(__('messages.client_down_mail', ['CLIENT' => $this->client->name]));
     }

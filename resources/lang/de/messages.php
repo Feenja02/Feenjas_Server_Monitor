@@ -72,6 +72,9 @@ return [
 
     /** Mail-Notifications */
     'greeting' => 'Hallo, ',
+    'temp_warning_notification' => 'Temperatur Warnung',
+    'hum_warning_notification' => 'Luftfeuchtigkeit Warnung',
+    'client_down_notification' => 'Client Down Warnung',
     'val_limit_reached_mail' => 'die gemessenen Werte von :CLIENT hat folgende Grenzwerte überschritten:',
     'to_dashboard' => 'Zum Dashboard',
     'client_down_mail' => 'der Client :CLIENT ist ausgefallen. Bitte dringend überprüfen!',

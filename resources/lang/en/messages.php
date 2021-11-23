@@ -71,6 +71,9 @@ return [
 
     /** Mail-Notifications */
     'greeting' => 'Hello, ',
+    'temp_warning_notification' => 'Temperature Warning',
+    'hum_warning_notification' => 'Humidity Warning',
+    'client_down_notification' => 'Client Down Warning',
     'val_limit_reached_mail' => 'the measured values of :CLIENT has exceeded the following limits:',
     'to_dashboard' => 'Go to the dashboard',
     'client_down_mail' => 'the client :CLIENT has failed. Please check urgently!',
